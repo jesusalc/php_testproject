@@ -1,0 +1,43 @@
+{
+  "name": "php_testproject_pull_request",
+  "version": "0.1",
+  "description": "php_testproject_pull_request",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jesusalc/php_testproject"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors",
+    "simpletest": "mocha --compilers js:babel-register ./src/**/*.spec.js",
+    "test": "mocha --require scripts/mocha_runner.js ./src/**/*.spec.js",
+    "build": "webpack -p --config webpack-production.config.js --progress --colors"
+  },
+  "private": true,
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "babel-register": "^6.22.0",
+    "enzyme": "^2.7.1",
+    "html-webpack-plugin": "^2.24.1",
+    "jsdom": "^9.9.1",
+    "react-addons-test-utils": "^15.4.2",
+    "transfer-webpack-plugin": "^0.1.4",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "intl": "^1.2.5",
+    "intl-locales-supported": "^1.0.0",
+    "material-design-icons": "^3.0.1",
+    "material-ui": "^0.16.4",
+    "mocha": "^3.2.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-intl": "^2.2.3",
+    "react-tap-event-plugin": "^2.0.1"
+  }
+}
