@@ -1,96 +1,97 @@
-Testprojekt
+Test project
 ===========
 
-Beschreibung 
+Description 
 ------------
-Es soll eine Webanwendung zum Erfassen von Postsendungen erstellt werden.
-
-Der User erfasst Sendungen über ein Webformular. Diese werden in einer DB gespeichert.
-
-Es wird zusätzlich eine flexibel einsetzbare Helper-Klasse benötigt, die bestimmte Informationen zum Sendungsbestand berechnet (s.u.). Die Helper-Klasse greift selbst nicht direkt auf die DB zu, sondern erhält die Sendungen, die berücksichtigt werden sollen im Code in der Form $helper->addSending(...)
-
-Das Projekt besteht aus folgenden Aufgabenbereichen:
-----------------------------------------------------
-* Anlegen einer geeigneten DB-Struktur. SQL-File zum Anlegen der DB bitte im Ordner 'data' ablegen. Als DB bitte Postgres verwenden.
-* Erstellen eines Webformulars und des benötigten JS-Codes. Hier ist die Verwendung von Bibliotheken (z.B. jQuery, ExtJs, jQueryUI etc.) erlaubt.
-* Erstellen einer addSending.php mit einer Funktion zum Speichern der Formular-Eingaben in der DB
-* Erstellen von Klassen für die Sendungsarten. Die Klassen haben u.a. eine Methode save(), um das Objekt in der DB anzulegen. (Funktionen zum laden aus der DB müssen nicht umgesetzt werden)
-* Erstellen der Helper-Klasse CourierHelper, der man Sendungen übergeben kann und die zu den übergebenen Sendungen verschiedene Informationen zurückliefert (Details s.u.).
+A web application for capturing mailings is to be created.
 
 
-Anforderung an die Weboberfläche
---------------------------------
-Formular zur Erfassung von Sendungen
+The user captures broadcasts via a web form. These are stored in a DB.
 
-* Auswahl:
-  - Paket national
-  - Paket international
-  - Brief national
-  - Brief international
+In addition, a flexibly usable helper class is required, which calculates certain information on the consignment stock (see below). The Helper class itself does not directly access the DB, but receives the broadcasts that are to be considered in the code in the form $helper->addSending (...)
 
-* übrige Felder nur anzeigen, wenn sie notwendig sind (s. Beschreibung der einzelnen Sendungsarten)
-* über das Webformular sollen folgende Daten erfasst werden: Sendungsart, Empfängername, Eingangsdatum, Größe und Gewicht der Sendung
-* Eingangsdatum als Datepicker
-* Speichern per Ajax
-* per JS prüfen, dass alle Felder gefüllt sind. Es wird nur gespeichert, wenn keine Daten fehlen
-* nach Speichern Ausgabe "Sendung an {Empfänger} wurde erfasst. Vorausichtliche Zustellung am ..., Preis: ..."
+The project consists of the following tasks:
+---------------------------------------------------
+* Create a suitable DB structure. SQL file to create the DB please store in the folder 'data'. Please use Postgres as DB.
+* Create a web form and the required JS code. The use of libraries (eg jQuery, ExtJs, jQueryUI, etc.) is allowed here.
+* Create an addSending.php with a function to save the form input in the DB
+* Create classes for the send modes. The classes have a save () method, for example, to create the object in the DB. (Functions for loading from the DB do not have to be converted)
+* Create the helper class CourierHelper, which can be used to send broadcasts, and which returns various information on the transmitted programs (see below).
 
-Beschreibung der einzelnen Sendungsarten
+
+Request to the web interface
+-------------------------------
+Form for recording consignments
+
+* Selection:
+  - National package
+  - International package
+  - Letter national
+  - International letter
+
+* Only display other fields if they are necessary (see description of the individual delivery modes)
+* The following data is to be collected via the web form: sending type, recipient name, date of receipt, size and weight of the shipment
+* Date of receipt as datepicker
+* Save by Ajax
+* Check with JS that all fields are filled. It is only saved if no data is missing
+* After saving Output "Shipment to {recipient} was recorded. Expected delivery on ..., price: ..."
+
+Description of each type of shipment
 --------------------------------------------
-**Sendungen allgemein**
-* Empfängername
-* eindeutige Tracking-Id
-* Eingangsdatum
-* Zustelldauer 
-  - Regeln hierzu:
-    - Briefe National 1 Tag, Interational 2 Tage
-    - Pakete National 2 Tage, International 7 Tage
+**Sending Delivery Form**
+* Recipient name
+* Unique tracking ID
+* Date of receipt
+* Delivery time 
+  - Rules for this:
+    - Letters National 1 day, Interational 2 days
+    - Packages National 2 days, International 7 days
 
-**Interationale Sendungen (Pakete und Briefe)**
-* Zollkosten
-* Land (Frankreich, Luxembourg, Belgien)
+**International packages (packages and letters)**
+* Customs charges
+* Country (France, Luxembourg, Belgium)
 
-**Briefe**
-* Gewicht in g
+**Letters**
+* Weight in g
 
-**Pakete**
-* Höhe, Breite, Länge in cm
-* Gewicht in g
-* Funktion zum berechnen des Preises
+**Packages**
+* Height, width, length in cm
+* Weight in g
+* Function to calculate the price
 
-**Preise**
-* Paket national
-  - Volumen < 6000 cm2, Gewicht <= 2 kg => 3,95 €
-  - Volumen < 6000 cm2, Gewicht > 2 kg =>  6,95 €
-  - Volumen >= 6000 => 7,95 €
+**Prices**
+* National package
+  - volume <6000 cm2, weight <= 2 kg => 3.95 €
+  - volume <6000 cm2, weight> 2 kg => 6.95 €
+  - volume> = 6000 => 7.95 €
 
-* Paket international
-  - Volumen < 4000 cm2 -> 6,95
-  - Volumen < 6000 cm2, Gewicht <= 2 kg => 8,95 €
-  - Volumen < 6000 cm2, Gewicht > 2 kg => 10,95 €
+* International package
+  - volume <4000 cm2 -> 6.95
+  - volume <6000 cm2, weight <= 2 kg => 8.95 €
+  - volume <6000 cm2, weight> 2 kg => 10,95 €
 
 * Brief national
-  - Gewicht <= 100g 0,70 €
-  - Gewicht > 100g => 1,60 €
+  - Weight <= 100g 0.70 €
+  - Weight> 100g => 1,60 €
 
-* Brief international
-  - Gewicht <= 100g => 0,90 €
-  - Gewicht > 100g => 2,10 €
-  - Gewicht >= 300g => 4,40 €
+* International letter
+  - Weight <= 100g => 0.90 €
+  - Weight> 100g => 2,10 €
+  - Weight> = 300g => 4.40 €
 
-**Funktionen von CourierHelper**
-* Funktion, um eine Sendung zu registrieren (->addSending())
-* Funktion zum Berechnen des Gesamtpreises aller Sendungen
-* Berechnung, wie viele internationale Sendungen, wie viele nationale Sendungen und wieviele Sendungen insgesamt vorliegen
-* Berechnung des Gesamtgewichts der Pakete und des Gesamtgewichts der Briefe
-* Funktion, die ein Datum entgegennimmt und ausgibt, wieviele Pakete an diesem Tag ausgeliefert werden (s. Zustelldauer weiter oben)
+**Functions of CourierHelper**
+* Function to register a shipment (-> addSending ())
+* Function to calculate the total price of all items
+* Calculation of how many international consignments, how many national consignments and how many consignments are available
+* Calculation of the total weight of the parcels and the total weight of the letters
+* Function, which receives a date and shows how many packets are delivered on this day (see delivery period above)
 
-Vorgaben
---------
-* Repository forken und nach Fertigstellung einen Pull-Request stellen.
-* Mit mehreren kleineren Commits arbeiten, damit wir das Vorgehen nachvollziehen können.
-* Daten werden in Postgres-DB gespeichert.
-* Für PHP keine externeren Bibliotheken bzw. Composer packages verwenden
-* Bei JS ist die Verwendung von Bibliotheken erlaubt
-* Ergebnis in git Repository ablegen
-* SQL File für DB in Ordner data ablegen
+Requirements
+------------
+* Search the repository and make a pull request after completion.
+* Work with several smaller commits, so that we can understand the procedure.
+* Data is stored in Postgres DB.
+* Do not use external libraries or composer packages for PHP
+* JS allows the use of libraries
+* Store result in git repository
+* Store the SQL file for DB into the data folder
