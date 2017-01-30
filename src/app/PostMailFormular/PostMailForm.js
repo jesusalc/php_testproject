@@ -100,6 +100,42 @@ const disableWeekends = (date) => {
   return date.getDay() === 0 || date.getDay() === 6;
 }
 
+var Child = React.createClass({
+  render: function() {
+    return (<div>I'm the child</div>);
+  }
+});
+
+class ShowHide extends Component {
+  constructor(props, context) {
+    super(props, context)
+
+    this.state = {
+      childVisible: false,
+    }
+
+    this.onClick = this.onClick.bind(this)
+  }
+
+  onClick() {
+    this.setState({
+      childVisible: !this.state.childVisible
+    });
+  }
+  render() {
+    return  <div>
+              <div onClick={this.onClick}>
+                Parent - click me to show/hide my child
+              </div>
+              {
+                this.state.childVisible
+                  ? <Child />
+                  : null
+              }
+            </div>
+  }
+}
+
 class PostMailForm extends Component {
   constructor(props, context) {
     super(props, context)
@@ -167,7 +203,7 @@ class PostMailForm extends Component {
                 value={this.state.email}
                 onChange={this.onChange} >
               </p>
-
+<ShowHide />
               <RaisedButton
                 label="Login"
                 type="submit"
