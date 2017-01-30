@@ -1,6 +1,16 @@
 Test project
 ===========
 
+## Installation
+
+```bash
+npm install
+npm run build
+npm run start 
+
+# Then, open http://localhost:3000 in the browser.
+````
+
 Description 
 ------------
 A web application for capturing mailings is to be created.
