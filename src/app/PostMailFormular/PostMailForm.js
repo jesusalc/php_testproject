@@ -72,12 +72,16 @@ class PostMailForm extends Component {
               >
               < HiddenFlagPOST       />           <br />
               < EmpfaengerName       />           <br />
-              < EmpfaengerTracking   />           <br />
+              < EmpfaengerLand       />           <br />
               < EmpfaengerDatum      />           <br />
               < ZustelldauerInfo     />           <br />
               < Zustelldauer         />           <br />
               < EmpfaengerZollkosten />           <br />
-              < EmpfaengerLand       />           <br />
+              < EmpfaengerTracking   />           <br />
+              < PacketTyp            />           <br />
+              <br />
+              <br />
+              < VersandSubmit        />           <br />
               <br />
               <br />
             </form>

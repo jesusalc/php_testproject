@@ -10,7 +10,7 @@ class EmpfaengerZollkosten extends Component {
     super(props, context)
 
     this.state = {
-      value: "",
+      value: 34.90,
     }
   }
 
@@ -20,6 +20,7 @@ class EmpfaengerZollkosten extends Component {
                 name="empfaenger_zollkosten"
                 id="empfaenger_zollkosten"
                 hintText="Zollkosten"
+                value={this.state.value}
                 required
                 errorText="Dieses Feld wird benötigt."
                 floatingLabelText="Zollkosten"
