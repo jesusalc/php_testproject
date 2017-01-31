@@ -4,6 +4,7 @@ import MenuItem from 'material-ui/MenuItem'
 
 import Brief from  './Brief'
 import Paket from  './Paket'
+import ZustelldauerInfo from  './ZustelldauerInfo'
 
 const PaketTypStyle = {
   selectField: {
@@ -27,7 +28,7 @@ export default class PaketTyp extends Component {
     super(props, context)
 
     this.state = {
-      value: "Brief",
+      value: "",
       paketVisible: false,
     }
 
@@ -69,6 +70,7 @@ export default class PaketTyp extends Component {
                 </SelectField>
                 <br />
               </div>
+              < ZustelldauerInfo     />           <br />
               {
                 this.state.paketVisible
                   ? <Paket />

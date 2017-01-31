@@ -27,23 +27,24 @@ export default class EmpfaengerLand extends Component {
 
     this.state = {
       value: "DEU",
-      vustelldauerVisible: false,
-      delivery_msg: ""
+      vustelldauer_visible: false,
+      delivery_message: ""
     }
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange = (event, index, value) => {
     let paket_typ = "Paket"
     let delivery_days = this.getDeliveryDays(paket_typ, value)
     let tage = this.getTagORTage(delivery_days)
-    let delivery_msg = `Das ${paket_typ} ist in der Regel in ${delivery_days} ${tage}`
+    let delivery_message = `Das ${paket_typ} ist in der Regel in ${delivery_days} ${tage}`
 
     this.setState({value})
-    console.log(delivery_msg)
+    console.log(delivery_message)
 
     this.setState({
-      vustelldauerVisible: !this.state.vustelldauerVisible,
-      delivery_msg: delivery_msg
+      vustelldauer_visible: true,
+      delivery_message: delivery_message
     })
   }
 
@@ -184,7 +185,6 @@ export default class EmpfaengerLand extends Component {
     }
   }
 
-
   render() {
     return <div style={PostMailStyle.container}>
               <div >
@@ -236,8 +236,9 @@ export default class EmpfaengerLand extends Component {
                 <br />
               </div>
               {
-                this.state.vustelldauerVisible
-                  ? <Zustelldauer />
+                this.state.vustelldauer_visible
+                  ? <Zustelldauer
+                      text={this.state.delivery_message}/>
                   : <br />
               }
               <br />

@@ -12,7 +12,10 @@ export default class Zustelldauer extends Component {
     this.state = {
       value: "in der Regel in 1-2 Tagen",
     }
+
   }
+
+
   render() {
     return <TextField
                 key="zustelldauer"
@@ -21,7 +24,7 @@ export default class Zustelldauer extends Component {
                 hintText="Zustelldauer"
                 disabled={true}
                 floatingLabelText="Zustelldauer beim Empfänger"
-                value={this.state.value}
+                value={this.props.text}
                 multiLine={false}
                 rows={1}
               />
