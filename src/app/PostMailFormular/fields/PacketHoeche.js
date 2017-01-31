@@ -19,7 +19,7 @@ const PostMailStyle = {
   }
 }
 
-class PacketHoeche extends Component {
+export default class PacketHoeche extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -50,5 +50,3 @@ class PacketHoeche extends Component {
 }
 
 
-
-module.exports = PacketHoeche

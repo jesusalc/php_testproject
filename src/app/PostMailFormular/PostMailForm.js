@@ -13,8 +13,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Divider from 'material-ui/Divider'
 import Paper from 'material-ui/Paper'
 
-
-
 import EmpfaengerDatum from  './fields/EmpfaengerDatum'
 import EmpfaengerLand from  './fields/EmpfaengerLand'
 import EmpfaengerName from  './fields/EmpfaengerName'

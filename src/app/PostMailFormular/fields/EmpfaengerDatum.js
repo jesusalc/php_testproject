@@ -31,7 +31,7 @@ const disableWeekends = (date) => {
   return date.getDay() === 0 || date.getDay() === 6
 }
 
-class EmpfaengerDatum extends Component {
+export default class EmpfaengerDatum extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -86,4 +86,3 @@ class EmpfaengerDatum extends Component {
 
 
 
-module.exports = EmpfaengerDatum

@@ -8,7 +8,7 @@ const EmpfaengerLandStyle = {
   }
 }
 
-class EmpfaengerLand extends Component {
+export default class EmpfaengerLand extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -69,5 +69,3 @@ class EmpfaengerLand extends Component {
 }
 
 
-
-module.exports = EmpfaengerLand

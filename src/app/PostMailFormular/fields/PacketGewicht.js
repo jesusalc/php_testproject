@@ -19,7 +19,7 @@ const PostMailStyle = {
   }
 }
 
-class PacketGewicht extends Component {
+export default class PacketGewicht extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -45,5 +45,3 @@ class PacketGewicht extends Component {
 }
 
 
-
-module.exports = PacketGewicht

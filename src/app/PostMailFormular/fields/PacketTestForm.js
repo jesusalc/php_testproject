@@ -1,14 +1,7 @@
-/**
- * In this file, we create a React component
- * which incorporates components provided by Material-UI.
- */
 import React, {Component} from 'react'
-
 import RaisedButton from 'material-ui/RaisedButton'
 
-
 import PacketTyp from  './PacketTyp'
-
 
 const PacketTestFormStyle = {
   container: {
@@ -27,12 +20,14 @@ const muiTheme = getMuiTheme({
   },
 })
 
-class PacketTestForm extends Component {
+export default class PacketTestForm extends Component {
   constructor(props, context) {
     super(props, context)
 
     this.state = {
       open: false,
+            value: "Brief",
+      childVisible: false,
     }
 
 
@@ -80,6 +75,4 @@ class PacketTestForm extends Component {
           </div>
   }
 }
-
-export default PacketTestForm;
 

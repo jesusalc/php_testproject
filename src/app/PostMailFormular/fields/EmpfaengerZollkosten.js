@@ -5,7 +5,7 @@ const EmpfaengerZollkostenStyle = {
 
 }
 
-class EmpfaengerZollkosten extends Component {
+export default class EmpfaengerZollkosten extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -31,5 +31,3 @@ class EmpfaengerZollkosten extends Component {
 }
 
 
-
-module.exports = EmpfaengerZollkosten

@@ -5,7 +5,7 @@ const ZustelldauerStyle = {
 
 }
 
-class Zustelldauer extends Component {
+export default class Zustelldauer extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -27,7 +27,3 @@ class Zustelldauer extends Component {
               />
     }
 }
-
-
-
-module.exports = Zustelldauer

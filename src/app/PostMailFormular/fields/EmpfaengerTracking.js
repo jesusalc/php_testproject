@@ -5,7 +5,7 @@ const EmpfaengerTrackingStyle = {
 
 }
 
-class EmpfaengerTracking extends Component {
+export default class EmpfaengerTracking extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -28,7 +28,3 @@ class EmpfaengerTracking extends Component {
               />
     }
 }
-
-
-
-module.exports = EmpfaengerTracking

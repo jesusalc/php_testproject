@@ -16,7 +16,7 @@ const PostMailStyle = {
   }
 }
 
-class Packet extends Component {
+export default class Packet extends Component {
   render() {
     return    <div style={PostMailStyle.container}>
 
@@ -29,3 +29,5 @@ class Packet extends Component {
               </div>
   }
 }
+
+

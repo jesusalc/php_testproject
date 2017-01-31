@@ -5,7 +5,7 @@ const EmpfaengerNameStyle = {
 
 }
 
-class EmpfaengerName extends Component {
+export default class EmpfaengerName extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -31,5 +31,3 @@ class EmpfaengerName extends Component {
 }
 
 
-
-module.exports = EmpfaengerName

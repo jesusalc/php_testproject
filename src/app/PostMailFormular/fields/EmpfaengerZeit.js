@@ -6,7 +6,7 @@ import de from 'react-intl/locale-data/de'
 import TimePicker from 'material-ui/TimePicker'
 
 
-class EmpfaengerZeit extends Component {
+export default class EmpfaengerZeit extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -27,10 +27,7 @@ class EmpfaengerZeit extends Component {
               hintText="Wählen Sie eine Tageszeit für die Paketlieferung an"
               okLabel="Nutzen"
               cancelLabel="Beenden"
-            />     
+            />
     }
 }
 
-
-
-module.exports = EmpfaengerZeit

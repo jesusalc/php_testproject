@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import TextField from 'material-ui/TextField'
 
-import BriefGewicht from  './BriefGewicht'
-
 const BriefGewichtStyle = {
   textfield: {
     width: '4em'
@@ -20,7 +18,7 @@ const PostMailStyle = {
   }
 }
 
-class BriefGewicht extends Component {
+export default class BriefGewicht extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -46,4 +44,3 @@ class BriefGewicht extends Component {
     }
 }
 
-module.exports = BriefGewicht

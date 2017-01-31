@@ -22,13 +22,23 @@ const PostMailStyle = {
   }
 }
 
-class PacketTyp extends Component {
+export default class PacketTyp extends Component {
   constructor(props, context) {
     super(props, context)
 
     this.state = {
       value: "Brief",
+      childVisible: false,
     }
+
+    this.onClick = this.onClick.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  onClick() {
+    this.setState({
+      childVisible: !this.state.childVisible
+    })
   }
 
   handleChange = (event, index, value) => {
@@ -69,56 +79,3 @@ class PacketTyp extends Component {
 }
 
 
-
-module.exports = PacketTyp
-
-
-class ShowHide extends Component {
-  constructor(props, context) {
-    super(props, context)
-
-    this.state = {
-      packetVisible: false,
-      value: "Brief",
-    }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.get_selected_from_checkbox_or_radio = this.get_selected_from_checkbox_or_radio.bind(this)
-  }
-
-  /**
-   * Extracts selected values from checkboxes and radios.
-   *
-   * @param string fieldName
-   * @return string the selected value(s).
-   *
-  get_selected_from_checkbox_or_radio(fieldName) {
-    console.log(fieldName)
-    let i
-    let fields = document.getElementsByName(fieldName)
-    let selectedFields = []
-    for (let i = 0; i < fields.length; i++) {
-      if (fields[i].checked === true) {
-        selectedFields.push(fields[i].value)
-      }
-    }
-    return selectedFields.join(', ')
-  }
-
-  handleChange(e) {
-    let packet_typ_value = this.get_selected_from_checkbox_or_radio('packet_typ')
-    console.log(packet_typ_value)
-    this.setState({
-      packetVisible: !this.state.packetVisible
-    })
-    console.log(e.target.name)
-    console.log(e.target.value)
-  }*/
-
-  handleChange = (event, index, value) => {
-    this.setState({value});
-  }
-  render() {
-    return
-  }
-}

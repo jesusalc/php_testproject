@@ -5,7 +5,7 @@ const VersandSubmitStyle = {
 
 }
 
-class VersandSubmit extends Component {
+export default class VersandSubmit extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -28,5 +28,3 @@ class VersandSubmit extends Component {
 }
 
 
-
-module.exports = VersandSubmit

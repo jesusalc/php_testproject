@@ -19,7 +19,7 @@ const PostMailStyle = {
   }
 }
 
-class PacketLaenge extends Component {
+export default class PacketLaenge extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -47,7 +47,3 @@ class PacketLaenge extends Component {
                 </div>
     }
 }
-
-
-
-module.exports = PacketLaenge

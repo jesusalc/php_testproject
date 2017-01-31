@@ -11,7 +11,7 @@ const ZustelldauerInfoStyle = {
   }
 }
 
-class ZustelldauerInfo extends Component {
+export default class ZustelldauerInfo extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -19,7 +19,7 @@ class ZustelldauerInfo extends Component {
       open: false,
     }
   }
-  
+
   handleRequestClose = () => {
     this.setState({
       open: false,
@@ -53,7 +53,7 @@ class ZustelldauerInfo extends Component {
                         </li>
                   <li>Pakete National 2 Tage, International 7 Tage
                   </li>
-                </ul> 
+                </ul>
               </Dialog>
               <RaisedButton
                 key="zustelldauer_info"
@@ -62,10 +62,8 @@ class ZustelldauerInfo extends Component {
                 label="Zustelldauer Info"
                 secondary={true}
                 onTouchTap={this.handleTouchTap}
-              />   
-            </div> 
+              />
+            </div>
     }
 }
 
-
-module.exports = ZustelldauerInfo

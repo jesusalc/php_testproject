@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import TextField from 'material-ui/TextField'
 
-class HiddenFlagPOST extends Component {
+export default class HiddenFlagPOST extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -23,5 +23,3 @@ class HiddenFlagPOST extends Component {
 }
 
 
-
-module.exports = HiddenFlagPOST
