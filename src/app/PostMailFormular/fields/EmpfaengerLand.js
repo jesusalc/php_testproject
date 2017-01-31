@@ -18,13 +18,22 @@ export default class EmpfaengerLand extends Component {
   }
 
   handleChange = (event, index, value) => {
-    console.log({value})
+    let paket_typ = "Paket"
+    let delivery_days = this.getDeliveryDays(paket_typ, value)
+    let tage = this.getTagORTage(delivery_days)
+    let delivery_msg = `Das ${paket_typ} ist in der Regel in ${delivery_days} ${tage} beim Empfänger`
     this.setState({value})
+    console.log(delivery_msg)
   }
 
-  getDeliveryDays(packet_typ, destination){
-    switch (packet_typ) {
-      case "Packet":
+  getTagORTage(number) {
+    return (number === 1 ? "Tag" : "Tagen")
+  }
+  getDeliveryDays(paket_typ, destination){
+    console.log(paket_typ)
+    console.log(destination)
+    switch (paket_typ) {
+      case "Paket":
         switch (destination) {
           case "NAL": return 2
             break

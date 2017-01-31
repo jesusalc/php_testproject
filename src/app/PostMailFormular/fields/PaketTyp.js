@@ -3,9 +3,9 @@ import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
 
 import Brief from  './Brief'
-import Packet from  './Packet'
+import Paket from  './Paket'
 
-const PacketTypStyle = {
+const PaketTypStyle = {
   selectField: {
     textAlign: 'left',
   }
@@ -22,7 +22,7 @@ const PostMailStyle = {
   }
 }
 
-export default class PacketTyp extends Component {
+export default class PaketTyp extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -48,30 +48,30 @@ export default class PacketTyp extends Component {
   render() {
     return <div style={PostMailStyle.container}>
               <div >
-                <h3>Welches PacketTyp ist das Paket?</h3>
+                <h3>Welches PaketTyp ist das Paket?</h3>
                 <SelectField
-                  key="packet_typ"
-                  name="packet_typ"
-                  id="packet_typ"
-                  style={PacketTypStyle.selectField}
+                  key="paket_typ"
+                  name="paket_typ"
+                  id="paket_typ"
+                  style={PaketTypStyle.selectField}
                   value={this.state.value}
                   onChange={this.handleChange}
                   maxHeight={200}
-                  hintText="PacketTyp"
+                  hintText="PaketTyp"
                   required
                   errorText="Dieses Feld wird benötigt."
-                  floatingLabelText="PacketTyp"
+                  floatingLabelText="PaketTyp"
                   multiLine={false}
                   rows={1}
                 >
                   <MenuItem key="Brief" value={"Brief"} primaryText="Brief" />
-                  <MenuItem key="Packet" value={"Packet"} primaryText="Packet" />
+                  <MenuItem key="Paket" value={"Paket"} primaryText="Paket" />
                 </SelectField>
                 <br />
               </div>
               {
-                this.state.packetVisible
-                  ? <Packet />
+                this.state.paketVisible
+                  ? <Paket />
                   : <Brief />
               }
             </div>

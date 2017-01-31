@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import TextField from 'material-ui/TextField'
 import FontIcon from 'material-ui/FontIcon'
 
-const PacketGewichtStyle = {
+const PaketHoecheStyle = {
   textfield: {
     width: '4em'
   }
@@ -19,7 +19,7 @@ const PostMailStyle = {
   }
 }
 
-export default class PacketGewicht extends Component {
+export default class PaketHoeche extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -30,16 +30,21 @@ export default class PacketGewicht extends Component {
 
   render() {
     return <div style={PostMailStyle.container}>
+                  <FontIcon
+                    className="material-icons"
+                    style={PostMailStyle.iconStyles}
+                  > border_left
+                  </FontIcon>
                   <TextField
-                    style={PacketGewichtStyle.textfield}
-                    key="packet_gewicht"
-                    name="packet_gewicht"
-                    id="packet_gewicht"
-                    hintText="Gewicht"
-                    floatingLabelText="Gewicht"
+                    style={PaketHoecheStyle.textfield}
+                    key="paket_hoeche"
+                    name="paket_hoeche"
+                    id="paket_hoeche"
+                    hintText="Höche"
+                    floatingLabelText="Höche"
                     multiLine={false}
                     rows={1}
-                    /> g
+                  />  cm
                 </div>
     }
 }

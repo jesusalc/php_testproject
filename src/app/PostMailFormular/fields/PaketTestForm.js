@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 
-import PacketTyp from  './PacketTyp'
+import PaketTyp from  './PaketTyp'
 
-const PacketTestFormStyle = {
+const PaketTestFormStyle = {
   container: {
     textAlign: 'center',
     paddingTop: 10,
@@ -20,7 +20,7 @@ const muiTheme = getMuiTheme({
   },
 })
 
-export default class PacketTestForm extends Component {
+export default class PaketTestForm extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -51,7 +51,7 @@ export default class PacketTestForm extends Component {
   render() {
 
     return
-          <div style={PacketTestFormStyle.container}>
+          <div style={PaketTestFormStyle.container}>
             <form onSubmit={this.onSubmit} >
               <input
                 type="text"
@@ -59,7 +59,7 @@ export default class PacketTestForm extends Component {
                 value={this.state.email}
                 onChange={this.onChange}
               />
-<PacketTyp />
+<PaketTyp />
               <p
                 value={this.state.email}
                 onChange={this.onChange} >

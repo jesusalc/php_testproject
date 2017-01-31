@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import TextField from 'material-ui/TextField'
 import FontIcon from 'material-ui/FontIcon'
 
-const PacketHoecheStyle = {
+const PaketBreiteStyle = {
   textfield: {
     width: '4em'
   }
@@ -19,7 +19,7 @@ const PostMailStyle = {
   }
 }
 
-export default class PacketHoeche extends Component {
+export default class PaketBreite extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -33,18 +33,18 @@ export default class PacketHoeche extends Component {
                   <FontIcon
                     className="material-icons"
                     style={PostMailStyle.iconStyles}
-                  > border_left
+                  > call_made
                   </FontIcon>
                   <TextField
-                    style={PacketHoecheStyle.textfield}
-                    key="packet_hoeche"
-                    name="packet_hoeche"
-                    id="packet_hoeche"
-                    hintText="Höche"
-                    floatingLabelText="Höche"
+                    style={PaketBreiteStyle.textfield}
+                    key="paket_breite"
+                    name="paket_breite"
+                    id="paket_breite"
+                    hintText="Breite"
+                    floatingLabelText="Breite"
                     multiLine={false}
                     rows={1}
-                  />  cm
+                  /> cm
                 </div>
     }
 }

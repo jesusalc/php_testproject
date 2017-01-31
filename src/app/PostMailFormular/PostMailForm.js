@@ -21,7 +21,7 @@ import EmpfaengerZeit from  './fields/EmpfaengerZeit'
 import EmpfaengerZollkosten from  './fields/EmpfaengerZollkosten'
 import HiddenFlagPOST from  './fields/HiddenFlagPOST'
 
-import PacketTyp from  './fields/PacketTyp'
+import PaketTyp from  './fields/PaketTyp'
 import VersandSubmit from  './fields/VersandSubmit'
 import Zustelldauer from  './fields/Zustelldauer'
 import ZustelldauerInfo from  './fields/ZustelldauerInfo'
@@ -61,9 +61,9 @@ class PostMailForm extends Component {
             <h3>Wohin möchten Sie Ihr Paket verschicken?</h3>
 
             <form
-              key="empfaenger_webpacket"
-              name="empfaenger_webpacket"
-              id="empfaenger_webpacket"
+              key="empfaenger_webpaket"
+              name="empfaenger_webpaket"
+              id="empfaenger_webpaket"
               method="post"
               action="./CourierHelper.php"
               onSubmit={this.onSubmit}
@@ -76,7 +76,7 @@ class PostMailForm extends Component {
               < Zustelldauer         />           <br />
               < EmpfaengerZollkosten />           <br />
               < EmpfaengerTracking   />           <br />
-              < PacketTyp            />           <br />
+              < PaketTyp            />           <br />
               <br />
               <br />
               < VersandSubmit        />           <br />
