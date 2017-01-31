@@ -49,9 +49,17 @@ export default class ZustelldauerInfo extends Component {
                 >
                 Regeln hierzu:
                 <ul>
-                  <li>Briefe National 1 Tag, Interational 2 Tage
-                        </li>
-                  <li>Pakete National 2 Tage, International 7 Tage
+                  <li>
+                    Briefe National 1 Tag
+                  </li>
+                  <li>
+                    Interational 2 Tage
+                  </li>
+                  <li>
+                    Pakete National 2 Tage
+                  </li>
+                  <li>
+                    International 7 Tage
                   </li>
                 </ul>
               </Dialog>
