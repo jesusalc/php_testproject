@@ -28,7 +28,7 @@ export default class PaketTyp extends Component {
 
     this.state = {
       value: "Brief",
-      childVisible: false,
+      paketVisible: false,
     }
 
     this.onClick = this.onClick.bind(this)
@@ -37,7 +37,7 @@ export default class PaketTyp extends Component {
 
   onClick() {
     this.setState({
-      childVisible: !this.state.childVisible
+      paketVisible: !this.state.paketVisible
     })
   }
 

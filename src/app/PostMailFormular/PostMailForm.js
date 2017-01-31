@@ -23,7 +23,6 @@ import HiddenFlagPOST from  './fields/HiddenFlagPOST'
 
 import PaketTyp from  './fields/PaketTyp'
 import VersandSubmit from  './fields/VersandSubmit'
-import Zustelldauer from  './fields/Zustelldauer'
 import ZustelldauerInfo from  './fields/ZustelldauerInfo'
 
 const PostMailStyle = {
@@ -70,10 +69,10 @@ class PostMailForm extends Component {
               >
               < HiddenFlagPOST       />           <br />
               < EmpfaengerName       />           <br />
-              < EmpfaengerLand       />           <br />
-              < EmpfaengerDatum      />           <br />
               < ZustelldauerInfo     />           <br />
-              < Zustelldauer         />           <br />
+              < EmpfaengerLand       />           <br />
+
+              < EmpfaengerDatum      />           <br />
               < EmpfaengerZollkosten />           <br />
               < EmpfaengerTracking   />           <br />
               < PaketTyp            />           <br />

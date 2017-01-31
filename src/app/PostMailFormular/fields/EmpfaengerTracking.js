@@ -10,8 +10,17 @@ export default class EmpfaengerTracking extends Component {
     super(props, context)
 
     this.state = {
-      value: "UPS1231KJU65K2017",
+      value: this.guid(),
     }
+  }
+
+  guid() {
+    const s4 = () => {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1)
+    }
+    return s4() + '.' + s4() + '.' + s4() + '.' + s4()
   }
 
   render() {

@@ -10,7 +10,7 @@ export default class Zustelldauer extends Component {
     super(props, context);
 
     this.state = {
-      value: "",
+      value: "in der Regel in 1-2 Tagen",
     }
   }
   render() {
@@ -20,8 +20,8 @@ export default class Zustelldauer extends Component {
                 id="zustelldauer"
                 hintText="Zustelldauer"
                 disabled={true}
-                floatingLabelText="Zustelldauer"
-                value="in der Regel in 1-2 Tagen"
+                floatingLabelText="Zustelldauer beim Empfänger"
+                value={this.state.value}
                 multiLine={false}
                 rows={1}
               />

@@ -6,6 +6,7 @@ import FlatButton from 'material-ui/FlatButton'
 const ZustelldauerInfoStyle = {
   container: {
     textAlign: 'center',
+    height: '120%',
     paddingTop: 10,
     width: '100%'
   }
@@ -50,16 +51,26 @@ export default class ZustelldauerInfo extends Component {
                 Regeln hierzu:
                 <ul>
                   <li>
-                    Briefe National 1 Tag
+                    Briefe
+                    <ol>
+                      <li>
+                        National 1 Tag
+                      </li>
+                      <li>
+                        International 2 Tage
+                      </li>
+                    </ol>
                   </li>
                   <li>
-                    Interational 2 Tage
-                  </li>
-                  <li>
-                    Pakete National 2 Tage
-                  </li>
-                  <li>
-                    International 7 Tage
+                    Pakete
+                    <ol>
+                      <li>
+                        National 2 Tage
+                      </li>
+                      <li>
+                        International 7 Tage
+                      </li>
+                    </ol>
                   </li>
                 </ul>
               </Dialog>
