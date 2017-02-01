@@ -43,7 +43,16 @@ export default class PaketTyp extends Component {
   }
 
   handleChange = (event, index, value) => {
-    this.setState({value})
+    let paket_typ = this.getBriefORPaket(value)
+    console.log(`${paket_typ}`)
+    this.setState({
+      value: value,
+      paketVisible: true
+    })
+  }
+
+  getBriefORPaket(text){
+    return (text === "Brief" ? `Der ${text}` : `Das ${text}`)
   }
 
   render() {
@@ -70,11 +79,18 @@ export default class PaketTyp extends Component {
                 </SelectField>
                 <br />
               </div>
-              < ZustelldauerInfo     />           <br />
               {
                 this.state.paketVisible
-                  ? <Paket />
-                  : <Brief />
+                  ? <div>
+                    {
+                      this.state.value === "Brief"
+                      ? <Brief />
+                      : <Paket />
+                    }
+                    </div>
+                  : <div>
+                      < ZustelldauerInfo     />           <br />
+                    </div>
               }
             </div>
     }

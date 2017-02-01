@@ -34,10 +34,10 @@ export default class EmpfaengerLand extends Component {
   }
 
   handleChange = (event, index, value) => {
-    let paket_typ = "Paket"
+    let paket_typ = this.getBriefORPaket("Paket")
     let delivery_days = this.getDeliveryDays(paket_typ, value)
     let tage = this.getTagORTage(delivery_days)
-    let delivery_message = `Das ${paket_typ} ist in der Regel in ${delivery_days} ${tage}`
+    let delivery_message = `${paket_typ} ist in der Regel in ${delivery_days} ${tage}`
 
     this.setState({value})
     console.log(delivery_message)
@@ -46,6 +46,10 @@ export default class EmpfaengerLand extends Component {
       vustelldauer_visible: true,
       delivery_message: delivery_message
     })
+  }
+
+  getBriefORPaket(text){
+    return (text === "Brief" ? `Der ${text}` : `Das ${text}`)
   }
 
   getTagORTage(number) {
