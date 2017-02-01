@@ -3,6 +3,7 @@ import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
 
 import Zustelldauer from  './Zustelldauer'
+import ZustelldauerInfo from  './ZustelldauerInfo'
 
 const EmpfaengerLandStyle = {
   selectField: {
@@ -243,7 +244,10 @@ export default class EmpfaengerLand extends Component {
                 this.state.vustelldauer_visible
                   ? <Zustelldauer
                       text={this.state.delivery_message}/>
-                  : <br />
+                  : <div>
+                      <ZustelldauerInfo />
+                      <br />
+                    </div>
               }
               <br />
             </div>
