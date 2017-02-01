@@ -47,8 +47,20 @@ class PostMailForm extends Component {
     super(props, context)
 
     this.state = {
-
+      hidden_flag_post: "",
+      name: "",
+      paket_typ: "",
+      paket_breite: 0,
+      paket_hoeche: 0,
+      paket_laenge: 0,
+      paket_gewicht: 0,
+      brief_gewicht: 0,
+      empfaenger_land: "",
+      empfaenger_datum: "",
+      empfaenger_zollkostern: "",
+      empfaenger_tracking: "",
     }
+
   }
 
   render() {
@@ -69,7 +81,7 @@ class PostMailForm extends Component {
               >
               < HiddenFlagPOST       />           <br />
               < EmpfaengerName       />           <br />
-              < PaketTyp            />           <br />
+              < PaketTyp             />           <br />
               < EmpfaengerLand       />           <br />
 
               < EmpfaengerDatum      />           <br />
