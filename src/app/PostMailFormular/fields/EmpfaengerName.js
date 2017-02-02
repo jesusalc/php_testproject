@@ -17,6 +17,7 @@ export default class EmpfaengerName extends Component {
     }
     this.onChange=this.onChange.bind(this)
     this.onTextChanged=this.onTextChanged.bind(this)
+    this.validateName=this.validateName.bind(this)
   }
 
   componentWillMount(event) {
@@ -59,7 +60,7 @@ export default class EmpfaengerName extends Component {
   }
   onTextChanged(event, new_value) {
     this.setState({ value: new_value }); // we update our state
-    this.props.callbackParent("EmpfaengerName", new_value); // we notify our parent
+    this.props.callbackParent("EmpfaengerName", "empfaenger_name", new_value); // we notify our parent
   }
 
   render() {

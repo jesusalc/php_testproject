@@ -48,7 +48,7 @@ class PostMailForm extends Component {
     this.state = {
       hidden_flag_post: "",
       empfaenger_name: "Pancho Villa",
-      paket_typ: "",
+      paket_typ: "Brief",
       paket_breite: 0,
       paket_hoeche: 0,
       paket_laenge: 0,
@@ -57,7 +57,7 @@ class PostMailForm extends Component {
       empfaenger_land: "",
       empfaenger_datum: "",
       empfaenger_zollkostern: "",
-      empfaenger_tracking: "",
+      empfaenger_tracking: ""
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -68,14 +68,10 @@ class PostMailForm extends Component {
     console.log(`${event} - ${index} - ${value}`)
   }
 
-  onChildChanged(caller, new_value) {
-    switch(caller) {
-      case "EmpfaengerName":
-        this.setState({ empfaenger_name: new_value });
-        break
-      default:
-
-    }
+  onChildChanged(caller, field_name, new_value) {
+    console.log(`${caller}-${[field_name]}: ${new_value}`)
+    this.setState({ [field_name]: new_value })
+    console.log(`confirmation ${[field_name]} is ${this.state[field_name]}`)
   }
 
   render() {
@@ -101,6 +97,8 @@ class PostMailForm extends Component {
               />           <br />
               < PaketTyp
                   post_mail_styles={PostMailStyles}
+                  initial_paket_typ={this.state.paket_typ}
+                  callbackParent={this.onChildChanged}
               />           <br />
               <h3>Wohin möchten Sie Ihr Paket verschicken?</h3>
               < EmpfaengerLand
