@@ -5,20 +5,9 @@ import PaketHoeche from  './PaketHoeche'
 import PaketLaenge from  './PaketLaenge'
 import PaketGewicht from  './PaketGewicht'
 
-const PostMailStyle = {
-  container: {
-    textAlign: 'center',
-    paddingTop: 10,
-    width: '100%'
-  },
-  iconStyles: {
-    marginRight: 24,
-  }
-}
-
 export default class Paket extends Component {
   render() {
-    return    <div style={PostMailStyle.container}>
+    return    <div style={this.props.post_mail_styles.container}>
 
                 <h3>Wie groß ist das Paket?</h3>
                 <PaketLaenge /> <PaketBreite /> <PaketHoeche /> <br />

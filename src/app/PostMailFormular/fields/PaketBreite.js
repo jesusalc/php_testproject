@@ -8,31 +8,21 @@ const PaketBreiteStyle = {
   }
 }
 
-const PostMailStyle = {
-  container: {
-    textAlign: 'center',
-    paddingTop: 10,
-    width: '100%'
-  },
-  iconStyles: {
-    marginRight: 24,
-  }
-}
-
 export default class PaketBreite extends Component {
   constructor(props, context) {
     super(props, context)
 
     this.state = {
+      parent_styles: props.post_mail_styles,
       value: ""
     }
   }
 
   render() {
-    return <div style={PostMailStyle.container}>
+    return <div style={this.state.parent_styles.container}>
                   <FontIcon
                     className="material-icons"
-                    style={PostMailStyle.iconStyles}
+                    style={this.state.parent_styles.iconStyles}
                   > call_made
                   </FontIcon>
                   <TextField
