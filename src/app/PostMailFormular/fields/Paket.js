@@ -10,10 +10,10 @@ export default class Paket extends Component {
     return    <div style={this.props.post_mail_styles.container}>
 
                 <h3>Wie groß ist das Paket?</h3>
-                <PaketLaenge /> <PaketBreite /> <PaketHoeche /> <br />
+                <PaketLaenge post_mail_styles={this.props.post_mail_styles} /> <PaketBreite post_mail_styles={this.props.post_mail_styles} /> <PaketHoeche post_mail_styles={this.props.post_mail_styles} /> <br />
 
                 <h3>Wie schwer ist dein Paket?</h3>
-                <PaketGewicht /> <br />
+                <PaketGewicht post_mail_styles={this.props.post_mail_styles} /> <br />
 
               </div>
   }

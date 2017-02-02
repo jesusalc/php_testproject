@@ -103,7 +103,9 @@ class PostMailForm extends Component {
                   post_mail_styles={PostMailStyles}
               />           <br />
               <h3>Wohin möchten Sie Ihr Paket verschicken?</h3>
-              < EmpfaengerLand       />           <br />
+              < EmpfaengerLand
+                  post_mail_styles={PostMailStyles}
+              />           <br />
 
               < EmpfaengerDatum      />           <br />
               < EmpfaengerZollkosten />           <br />
