@@ -10,17 +10,20 @@ export default class EmpfaengerName extends Component {
     super(props, context)
 
     this.state = {
-      parent_styles: props.post_mail_styles,
-      value: props.initial_empfaenger_name, //"Bjørk Larsen",
-      errorText: "",
+      parent_styles:     props.post_mail_styles,
+      value:             props.initial_empfaenger_name, //"Bjørk Larsen",
+      errorText:         "",
       floatingLabelText: "Empfängername"
     }
     this.onChange=this.onChange.bind(this)
     this.onTextChanged=this.onTextChanged.bind(this)
   }
 
-  onChange(event) {
-    let value = event.target.value
+  componentWillMount(event) {
+    this.validateName(event, this.state.value)
+  }
+
+  validateName(event, value) {
     let error_found = 0
     //Not empty
     if (value === "") {
@@ -48,7 +51,11 @@ export default class EmpfaengerName extends Component {
     } else {
       this.setState({ floatingLabelText: "Empfängername" })
     }
+  }
 
+  onChange(event) {
+    let value = event.target.value
+    this.validateName(event, value)
   }
   onTextChanged(event, new_value) {
     this.setState({ value: new_value }); // we update our state
