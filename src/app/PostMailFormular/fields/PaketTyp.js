@@ -12,22 +12,12 @@ const PaketTypStyle = {
   }
 }
 
-const PostMailStyle = {
-  container: {
-    textAlign: 'center',
-    paddingTop: 10,
-    width: '100%'
-  },
-  iconStyles: {
-    marginRight: 24,
-  }
-}
-
 export default class PaketTyp extends Component {
   constructor(props, context) {
     super(props, context)
 
     this.state = {
+      parent_styles: props.post_mail_styles,
       value: "",
       paketVisible: false,
     }
@@ -56,7 +46,7 @@ export default class PaketTyp extends Component {
   }
 
   render() {
-    return <div style={PostMailStyle.container}>
+    return <div style={this.state.parent_styles.container}>
               <div >
                 <h3>Welches PaketTyp ist das Paket?</h3>
                 <SelectField
@@ -84,12 +74,13 @@ export default class PaketTyp extends Component {
                   ? <div>
                     {
                       this.state.value === "Brief"
-                      ? <Brief />
-                      : <Paket />
+                      ? <Brief post_mail_styles={this.state.parent_styles} />
+                      : <Paket post_mail_styles={this.state.parent_styles} />
                     }
                     </div>
                   : <div>
-                      < ZustelldauerInfo     />           <br />
+                      < ZustelldauerInfo  post_mail_styles={this.state.parent_styles}
+                      />           <br />
                     </div>
               }
             </div>

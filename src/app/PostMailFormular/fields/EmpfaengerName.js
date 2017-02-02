@@ -10,6 +10,7 @@ export default class EmpfaengerName extends Component {
     super(props, context)
 
     this.state = {
+      parent_styles: props.post_mail_styles,
       value: props.initial_empfaenger_name, //"Bjørk Larsen",
       errorText: "",
       floatingLabelText: "Empfängername"

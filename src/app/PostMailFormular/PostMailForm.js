@@ -24,8 +24,7 @@ import HiddenFlagPOST from  './fields/HiddenFlagPOST'
 import PaketTyp from  './fields/PaketTyp'
 import VersandSubmit from  './fields/VersandSubmit'
 
-
-const PostMailStyle = {
+const PostMailStyles = {
   container: {
     textAlign: 'center',
     paddingTop: 10,
@@ -82,7 +81,7 @@ class PostMailForm extends Component {
   render() {
     return <MuiThemeProvider muiTheme={muiTheme}>
         <Paper zDepth={2}>
-          <div style={PostMailStyle.container}>
+          <div style={PostMailStyles.container}>
             <h1>Webanwendung Web Paket Postsendungen</h1>
             <h2>Produkt wählen &amp; adressieren</h2>
 
@@ -96,10 +95,13 @@ class PostMailForm extends Component {
               >
               < HiddenFlagPOST       />           <br />
               < EmpfaengerName
+                  post_mail_styles={PostMailStyles}
                   initial_empfaenger_name={this.state.empfaenger_name}
                   callbackParent={this.onChildChanged}
               />           <br />
-              < PaketTyp             />           <br />
+              < PaketTyp
+                  post_mail_styles={PostMailStyles}
+              />           <br />
               <h3>Wohin möchten Sie Ihr Paket verschicken?</h3>
               < EmpfaengerLand       />           <br />
 
