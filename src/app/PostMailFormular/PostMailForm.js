@@ -48,7 +48,7 @@ class PostMailForm extends Component {
 
     this.state = {
       hidden_flag_post: "",
-      name: "",
+      empfaenger_name: "Pancho Villa",
       paket_typ: "",
       paket_breite: 0,
       paket_hoeche: 0,
@@ -61,6 +61,22 @@ class PostMailForm extends Component {
       empfaenger_tracking: "",
     }
 
+    this.handleChange = this.handleChange.bind(this)
+    this.onChildChanged = this.onChildChanged.bind(this)
+  }
+
+  handleChange = (event, index, value) => {
+    console.log(`${event} - ${index} - ${value}`)
+  }
+
+  onChildChanged(caller, new_value) {
+    switch(caller) {
+      case "EmpfaengerName":
+        this.setState({ empfaenger_name: new_value });
+        break
+      default:
+
+    }
   }
 
   render() {
@@ -69,7 +85,6 @@ class PostMailForm extends Component {
           <div style={PostMailStyle.container}>
             <h1>Webanwendung Web Paket Postsendungen</h1>
             <h2>Produkt wählen &amp; adressieren</h2>
-            <h3>Wohin möchten Sie Ihr Paket verschicken?</h3>
 
             <form
               key="empfaenger_webpaket"
@@ -80,8 +95,12 @@ class PostMailForm extends Component {
               onSubmit={this.onSubmit}
               >
               < HiddenFlagPOST       />           <br />
-              < EmpfaengerName       />           <br />
+              < EmpfaengerName
+                  initial_empfaenger_name={this.state.empfaenger_name}
+                  callbackParent={this.onChildChanged}
+              />           <br />
               < PaketTyp             />           <br />
+              <h3>Wohin möchten Sie Ihr Paket verschicken?</h3>
               < EmpfaengerLand       />           <br />
 
               < EmpfaengerDatum      />           <br />
