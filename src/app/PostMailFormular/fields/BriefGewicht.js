@@ -27,6 +27,7 @@ export default class BriefGewicht extends Component {
                   id="brief_gewicht"
                   hintText="Gewicht"
                   floatingLabelText="Gewicht"
+                  defaultValue={this.state.value}
                   multiLine={false}
                   rows={1}
                 /> g

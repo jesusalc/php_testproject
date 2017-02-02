@@ -31,6 +31,7 @@ export default class PaketLaenge extends Component {
                     id="paket_laenge"
                     hintText="Länge"
                     floatingLabelText="Länge"
+                    defaultValue={this.state.value}
                     multiLine={false}
                     rows={1}
                   /> cm

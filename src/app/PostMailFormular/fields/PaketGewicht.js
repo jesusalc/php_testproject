@@ -27,6 +27,7 @@ export default class PaketGewicht extends Component {
                     id="paket_gewicht"
                     hintText="Gewicht"
                     floatingLabelText="Gewicht"
+                    defaultValue={this.state.value}
                     multiLine={false}
                     rows={1}
                     /> g

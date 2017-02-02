@@ -14,7 +14,7 @@ export default class PaketBreite extends Component {
 
     this.state = {
       parent_styles: props.post_mail_styles,
-      value: ""
+      value:         props.initial_paket_breite
     }
   }
 
@@ -31,6 +31,7 @@ export default class PaketBreite extends Component {
                     name="paket_breite"
                     id="paket_breite"
                     hintText="Breite"
+                    defaultValue={this.state.value}
                     floatingLabelText="Breite"
                     multiLine={false}
                     rows={1}

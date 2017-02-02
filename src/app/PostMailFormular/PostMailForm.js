@@ -98,6 +98,11 @@ class PostMailForm extends Component {
               < PaketTyp
                   post_mail_styles={PostMailStyles}
                   initial_paket_typ={this.state.paket_typ}
+                  initial_paket_breite={this.state.paket_breite}
+                  initial_paket_hoeche={this.state.paket_hoeche}
+                  initial_paket_laenge={this.state.paket_laenge}
+                  initial_paket_gewicht={this.state.paket_gewicht}
+                  initial_brief_gewicht={this.state.brief_gewicht}
                   callbackParent={this.onChildChanged}
               />           <br />
               <h3>Wohin möchten Sie Ihr Paket verschicken?</h3>

@@ -18,7 +18,12 @@ export default class PaketTyp extends Component {
 
     this.state = {
       parent_styles:     props.post_mail_styles,
-      value:             props.paket_typ,
+      value:             props.initial_paket_typ,
+      paket_breite:      props.initial_paket_breite,
+      paket_hoeche:      props.initial_paket_hoeche,
+      paket_laenge:      props.initial_paket_laenge,
+      paket_gewicht:     props.initial_paket_gewicht,
+      brief_gewicht:     props.initial_brief_gewicht,
       paketVisible:      false,
       errorText:         "",
       floatingLabelText: "PaketTyp"
@@ -29,6 +34,7 @@ export default class PaketTyp extends Component {
     this.validatePaketTyp = this.validatePaketTyp.bind(this)
     this.processAcceptedChange = this.processAcceptedChange.bind(this)
     this.notifyNewValueToParent = this.notifyNewValueToParent.bind(this)
+    this.onChildBriefPaketChanged = this.onChildBriefPaketChanged.bind(this)
   }
   notifyNewValueToParent(event, new_value) {
     this.setState({ value: new_value }); // we update our state
@@ -76,6 +82,12 @@ export default class PaketTyp extends Component {
     this.notifyNewValueToParent(event, value)
   }
 
+  onChildBriefPaketChanged(caller, field_name, new_value) {
+    console.log(`${caller}-${[field_name]}: ${new_value}`)
+    this.setState({ [field_name]: new_value })
+    console.log(`confirmation ${[field_name]} is ${this.state[field_name]}`)
+  }
+
   onClick() {
     this.setState({
       paketVisible: !this.state.paketVisible
@@ -119,8 +131,19 @@ export default class PaketTyp extends Component {
                   ? <div>
                     {
                       this.state.value === "Brief"
-                      ? <Brief post_mail_styles={this.state.parent_styles} />
-                      : <Paket post_mail_styles={this.state.parent_styles} />
+                      ? <Brief
+                          post_mail_styles={this.state.parent_styles}
+                          initial_brief_gewicht={this.state.brief_gewicht}
+                          callbackParent={this.onChildBriefPaketChanged}
+                        />
+                      : <Paket
+                          post_mail_styles={this.state.parent_styles}
+                          initial_paket_breite={this.state.paket_breite}
+                          initial_paket_hoeche={this.state.paket_hoeche}
+                          initial_paket_laenge={this.state.paket_laenge}
+                          initial_paket_gewicht={this.state.paket_gewicht}
+                          callbackParent={this.onChildBriefPaketChanged}
+                        />
                     }
                     </div>
                   : <div>

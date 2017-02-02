@@ -32,6 +32,7 @@ export default class PaketHoeche extends Component {
                     id="paket_hoeche"
                     hintText="Höche"
                     floatingLabelText="Höche"
+                    defaultValue={this.state.value}
                     multiLine={false}
                     rows={1}
                   />  cm
