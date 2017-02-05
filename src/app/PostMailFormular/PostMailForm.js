@@ -74,7 +74,11 @@ class PostMailForm extends Component {
       empfaenger_tracking: ""
     }
 
-    this.propTypes = {
+    this.handleChange = this.handleChange.bind(this)
+    this.onChildChanged = this.onChildChanged.bind(this)
+  }
+
+  static propTypes = {
         hidden_flag_post:  React.PropTypes.string.isRequired,
         empfaenger_name:  React.PropTypes.string.isRequired,
         paket_typ:  React.PropTypes.string.isRequired,
@@ -88,10 +92,6 @@ class PostMailForm extends Component {
         empfaenger_zollkostern:  React.PropTypes.number.isRequired,
         empfaenger_tracking:  React.PropTypes.string.isRequired
     }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.onChildChanged = this.onChildChanged.bind(this)
-  }
 
   handleChange = (event, index, value) => {
     console.log(`${event} - ${index} - ${value}`)
