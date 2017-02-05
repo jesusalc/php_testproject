@@ -56,8 +56,37 @@ class PostMailForm extends Component {
       brief_gewicht: 0,
       empfaenger_land: "",
       empfaenger_datum: "",
-      empfaenger_zollkostern: "",
+      empfaenger_zollkostern: 0,
       empfaenger_tracking: ""
+    }
+    this.defaultProps = {
+      hidden_flag_post: "",
+      empfaenger_name: "Pancho Villa",
+      paket_typ: "Brief",
+      paket_breite: 0,
+      paket_hoeche: 0,
+      paket_laenge: 0,
+      paket_gewicht: 0,
+      brief_gewicht: 0,
+      empfaenger_land: "",
+      empfaenger_datum: "",
+      empfaenger_zollkostern: 0,
+      empfaenger_tracking: ""
+    }
+
+    this.propTypes = {
+        hidden_flag_post:  React.PropTypes.string.isRequired,
+        empfaenger_name:  React.PropTypes.string.isRequired,
+        paket_typ:  React.PropTypes.string.isRequired,
+        paket_breite:  React.PropTypes.number.isRequired,
+        paket_hoeche:  React.PropTypes.number.isRequired,
+        paket_laenge:  React.PropTypes.number.isRequired,
+        paket_gewicht:  React.PropTypes.number.isRequired,
+        brief_gewicht:  React.PropTypes.number.isRequired,
+        empfaenger_land:  React.PropTypes.string.isRequired,
+        empfaenger_datum:  React.PropTypes.string.isRequired,
+        empfaenger_zollkostern:  React.PropTypes.number.isRequired,
+        empfaenger_tracking:  React.PropTypes.string.isRequired
     }
 
     this.handleChange = this.handleChange.bind(this)

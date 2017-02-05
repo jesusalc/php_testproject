@@ -34,11 +34,17 @@ export default class PaketTyp extends Component {
     this.validatePaketTyp = this.validatePaketTyp.bind(this)
     this.processAcceptedChange = this.processAcceptedChange.bind(this)
     this.notifyNewValueToParent = this.notifyNewValueToParent.bind(this)
+    this.notifyNewValueToParentByPass = this.notifyNewValueToParentByPass.bind(this)
     this.onChildBriefPaketChanged = this.onChildBriefPaketChanged.bind(this)
   }
   notifyNewValueToParent(event, new_value) {
     this.setState({ value: new_value }); // we update our state
     this.props.callbackParent("PaketTyp", "paket_typ", new_value); // we notify our parent
+  }
+
+  notifyNewValueToParentByPass(event, new_value) {
+    this.setState({ [field_name]: new_value }); // we update our state
+    this.props.callbackParent(caller, field_name, new_value) // we notify our parent
   }
 
   componentWillMount(event) {
@@ -86,6 +92,7 @@ export default class PaketTyp extends Component {
     console.log(`${caller}-${[field_name]}: ${new_value}`)
     this.setState({ [field_name]: new_value })
     console.log(`confirmation ${[field_name]} is ${this.state[field_name]}`)
+    this.notifyNewValueToParentByPass(caller, field_name, new_value)
   }
 
   onClick() {

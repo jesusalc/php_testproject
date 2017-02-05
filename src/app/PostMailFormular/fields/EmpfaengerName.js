@@ -33,12 +33,15 @@ export default class EmpfaengerName extends Component {
     } else {
       this.setState({ errorText: '' })
     }
-    if (!error_found && value.match("^[^±!@£$%^&*_+§¡€#¢§¶•ªº«\\/<>?:;|=.,]{1,20}$")) {
-      this.setState({ errorText: "" })
-    } else {
+
+    if (!error_found && !
+      value.match("^[^±!@£$%^&*_+§¡€#¢§¶•ªº«\\/<>?:;|=.,]{1,20}$")) {
       this.setState({ errorText: 'Ungültige Zeichen im Namen.' })
       error_found = 1
+    } else {
+      this.setState({ errorText: "" })
     }
+    /*
     if (!error_found && value.split(" ").length < 2) {
       error_found = 1
       this.setState({ errorText: 'Vor- und Nachname sind mindestens erforderlich.' })
@@ -52,6 +55,7 @@ export default class EmpfaengerName extends Component {
     } else {
       this.setState({ floatingLabelText: "Empfängername" })
     }
+    */
   }
 
   onChange(event) {

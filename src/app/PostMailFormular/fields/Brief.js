@@ -14,7 +14,10 @@ export default class Brief extends Component {
     return  <div style={this.props.post_mail_styles.container}>
 
               <h3>Wie groß ist das Brief?</h3>
-              <BriefGewicht post_mail_styles={this.props.post_mail_styles} />  <br />
+              <BriefGewicht
+                onChange={this.handleChange}
+                post_mail_styles={this.props.post_mail_styles}
+              />  <br />
 
             </div>
   }
